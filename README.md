@@ -34,6 +34,12 @@ Run with MPI on 10 processes (potentially on multiple nodes) with 4 GPUs each, f
 $ mpirun -np 10 ./build/all_reduce_perf -b 8 -e 128M -f 2 -g 4
 ```
 
+ADDED: Working command example on akmu cluster
+Run with MPI on 2 processes (1 each on a4,a7) with 2 GPUs each, for a total of 4 GPUs:
+```shell
+$ mpirun -x LD_LIBRARY_PATH -np 2 --host a4,a7 ./build/all_reduce_perf -b 8 -e 128M -f 2 -g 2
+```
+
 ### Performance
 
 See the [Performance](doc/PERFORMANCE.md) page for explanation about numbers, and in particular the "busbw" column.
